@@ -1,0 +1,66 @@
+.todo-item {
+  overflow: hidden;
+  .content {
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    border-bottom: 1px solid #cccccc;
+    .check-input {
+      padding: 0 10px;
+    }
+    .view {
+      display: flex;
+      margin-left: 10px;
+      flex-grow: 1;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      .active-text {
+        display: block;
+        width: 500px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .icon {
+        float: right;
+        opacity: 0;
+        margin-right: 20px;
+        font-size: 22px;
+        color: brown;
+        cursor: pointer;
+        transform: rotate(45deg);
+        user-select: none;
+      }
+    }
+    .edit {
+      display: none;
+      flex-grow: 1;
+      user-select: none;
+      .edit-inp {
+        height: 50px;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+        outline: none;
+        font-size: 20px;
+      }
+    }
+    &.edit {
+      .view {
+        display: none;
+      }
+      .edit {
+        display: block;
+      }
+    }
+  }
+  &:hover {
+    .icon {
+      opacity: 1 !important;
+    }
+  }
+}
